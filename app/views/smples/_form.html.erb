@@ -1,0 +1,32 @@
+<%= form_with(model: smple, local: true) do |form| %>
+  <% if smple.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(smple.errors.count, "error") %> prohibited this smple from being saved:</h2>
+
+      <ul>
+      <% smple.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :par1 %>
+    <%= form.text_field :par1, id: :smple_par1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :par2 %>
+    <%= form.text_field :par2, id: :smple_par2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grp %>
+    <%= form.text_field :grp, id: :smple_grp %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

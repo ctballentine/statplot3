@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Smples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Par1</th>
+      <th>Par2</th>
+      <th>Grp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @smples.each do |smple| %>
+      <tr>
+        <td><%= smple.par1 %></td>
+        <td><%= smple.par2 %></td>
+        <td><%= smple.grp %></td>
+        <td><%= link_to 'Show', smple %></td>
+        <td><%= link_to 'Edit', edit_smple_path(smple) %></td>
+        <td><%= link_to 'Destroy', smple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>XCords</th>
+      <th>YCords</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <% @xcords.each do |cord| %>
+        <td><%= cord %></td>
+         <% end %>
+      </tr>
+      <tr>
+        <% @ycords.each do |cord| %>
+        <td><%= cord %></td>
+         <% end %>
+      </tr>
+
+
+  </tbody>
+</table>
+
+<%= link_to 'New Smple', new_smple_path %>
+
+<%= javascript_tag do %>
+  window.smplesURL = "<%= j smples_url %>";
+<% end %>

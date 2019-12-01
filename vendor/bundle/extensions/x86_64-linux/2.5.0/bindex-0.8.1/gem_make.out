@@ -1,0 +1,15 @@
+current directory: /home/mtfe/Development/__Rails/StatPlot3/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+/usr/share/rvm/rubies/ruby-2.5.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191129-27965-113q8gt.rb extconf.rb
+creating Makefile
+
+current directory: /home/mtfe/Development/__Rails/StatPlot3/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/mtfe/Development/__Rails/StatPlot3/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/mtfe/Development/__Rails/StatPlot3/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -m 0755 cruby.so ./.gem.20191129-27965-1yvej08/skiptrace/internal

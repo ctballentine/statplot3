@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  par1: 1.5
+  par2: 1.5
+  grp: MyString
+
+two:
+  par1: 1.5
+  par2: 1.5
+  grp: MyString
