@@ -1,5 +1,19 @@
-<p id="notice"><%= notice %></p>
 
+<div>
+ <%= javascript_tag do -%>
+    var stuff = <%= @ycords %>;
+    var duff = <%= @xcords %>;
+    var rectheights = <%= @heights %>; 
+    var xlabelpos = <%= @xlabelpos %>;
+    var xlabels = <%= raw @xlabels %>;
+    var classnames = <%= raw @classnames %>;
+    var legclass = <%= raw @legclass %>;
+    var leglabel = <%= raw @legname %>;    
+  <%- end -%>
+</div>
+
+<p id="notice"><%= notice %></p>
+<%= link_to 'New Smple', new_smple_path %>
 <h1>Smples</h1>
 
 <table>
@@ -56,4 +70,7 @@
 
 <%= javascript_tag do %>
   window.smplesURL = "<%= j smples_url %>";
+  window.smples = <%= raw @ycords %>;
 <% end %>
+
+

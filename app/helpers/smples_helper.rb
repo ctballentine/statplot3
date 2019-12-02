@@ -1,7 +1,12 @@
 module SmplesHelper
 
   
-
+#########    percent_position
+#
+#
+#
+#
+#
 def percent_position(percent_array)
   i=0
   dataPos=[0]
@@ -14,6 +19,26 @@ end
 
 
 
+
+###########   height_position
+#
+#
+#
+#
+#
+def height_coordinates(record_relation)
+  return_array=[]
+  tmpArry=[]
+  tmpHash = get_param_percentage(record_relation)
+  tmpHash.each{|x,y| 
+    return_array += y.values
+    }
+  return return_array
+end
+
+
+
+
 ######## get_param_percentage
 #
 # goal here is to return a hash
@@ -23,7 +48,6 @@ end
 #        par2 values
 #
 #
-
 def get_param_percentage(record_relation)
   params=record_relation.map{|x| x.par1}.uniq
   return_hash = {}
@@ -43,6 +67,13 @@ end
 
 
 
+
+########get_stat_values
+#
+#
+#
+#
+#
 def get_stat_values(record_relation)
   return_array=[]
   params=record_relation.map{|x| x.par1}.uniq
@@ -120,6 +151,33 @@ end
 
 
 
+
+def get_x_label(record_relation)
+  return_array=[]
+  tmpArry=[]
+  tmpHash = get_param_percentage(record_relation)
+  tmpArry = tmpHash.keys.sort
+  tmpArry.each{|x| return_array.push(x.to_s)}
+  return return_array
+end
+
+
+def get_x_label_pos(record_relation)
+  return_array=[]
+  tmpArry=[]
+  tmpHash = get_param_percentage(record_relation)
+  return_array = tmpHash.keys.sort
+  return return_array
+end
+
+
+#########get_x_coordinates
+#
+#
+#
+#
+#
+#
 def get_x_coordinates(record_relation)
   i=0
   tmpArry=[]
@@ -138,6 +196,50 @@ end
 
 
 
+#######set_class
+#
+#
+#    returns array of class names
+#       for each par 2 value
+#     in same order as xcord and ycord
+#
+def set_class(record_relation)
+  return_array=[]
+  tmpArry=[]
+  tmpHash = get_param_percentage(record_relation)
+  tmpHash.each{|x,y| 
+    tmpArry += y.keys
+    }
+  tmpArry.each{|x| return_array.push("par2"+x.to_s.gsub(/\.5/,'x5').gsub(/\.0/,'')
+)}
+  return return_array
+end
+
+
+
+
+def set_leg_label(record_relation)
+  flotArry = []
+return_array = []
+  tmpArry = set_class(record_relation)
+  tmpArry.each{|x| flotArry.push(x.gsub(/par2/,'').gsub(/x/,'.').to_f)}
+  return_array = flotArry.uniq.sort.to_s 
+  return return_array
+end
+
+
+
+
+def set_leg_class(record_relation)
+  burnArry = []
+  flotArry = []
+return_array = []
+  tmpArry = set_class(record_relation)
+  tmpArry.each{|x| flotArry.push(x.gsub(/par2/,'').gsub(/x/,'.').to_f)}
+  burnArry = flotArry.uniq.sort
+  burnArry.each{|x| return_array.push("par2"+x.to_s.gsub(/\.5/,'x5').gsub(/\.0/,''))}
+  return return_array
+end
 
 
 

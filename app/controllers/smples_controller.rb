@@ -9,9 +9,16 @@ class SmplesController < ApplicationController
       format.js { render :action => 'index' }
     end
     @smples = Smple.all
-    record_relation = Smple.where('grp == "A"')
+    record_relation = Smple.all
+    #record_relation = Smple.where('grp == "B"')
     @xcords = helpers.get_x_coordinates(record_relation)
     @ycords = helpers.get_y_coordinates(record_relation)
+    @heights = helpers.height_coordinates(record_relation)
+    @classnames = helpers.set_class(record_relation)
+    @xlabels = helpers.get_x_label(record_relation)
+    @xlabelpos = helpers.get_x_label_pos(record_relation)
+    @legclass = helpers.set_leg_class(record_relation)
+    @legname = helpers.set_leg_label(record_relation)
   end
 
   # GET /smples/1
