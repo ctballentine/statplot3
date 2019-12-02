@@ -53,10 +53,10 @@ def get_param_percentage(record_relation)
   return_hash = {}
   params.each{|p|
     tmpHash = {}
-    tmpReltn = record_relation.where('par1 == ' + p.to_s)
+    tmpReltn = record_relation.where(par1: p)
     tmpParams = tmpReltn.map{|x| x.par2}.uniq
       tmpParams.each{|q|
-            dubTmpReltn = tmpReltn.where('par2 == ' + q.to_s)
+            dubTmpReltn = tmpReltn.where(par2: q)
             tmpPerc = (dubTmpReltn.length.to_f/tmpReltn.length.to_f)*100
             tmpHash[q] = tmpPerc 
       }
