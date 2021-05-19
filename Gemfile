@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.7'
 #gem 'sqlite3'
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 4.3'
 # Use D3 for js data visualization
 gem 'd3-rails'
 # Use SCSS for stylesheets
